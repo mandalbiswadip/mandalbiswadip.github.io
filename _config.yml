@@ -2,8 +2,8 @@
 #This document contains the setting information of this blog, you can edit it to personalize your blog,
 #
 
-# Your blog name, you want to replace with a blog name "LOFFER", the following modifications can be similarly treated
-# Note, "name: LOFFER", a space after the colon can not be omitted.
+# Your blog name, you want to replace with a blog name "Biswadip", the following modifications can be similarly treated
+# Note, "name: Biswadip", a space after the colon can not be omitted.
 # Behind the pound sign text is documentation, it will not be read by the program.
 
 # Description/Signature
@@ -16,10 +16,10 @@ description : Biswadip Blog
 #
 
 #URL of your blog logo image, the recommended size is not more than 300px × 300px
-avatar: https://raw.githubusercontent.com/FromEndWorld/LOFFER/master/images/logo.png
+avatar: https://raw.githubusercontent.com/mandalbiswadip/mandalbiswadip.github.io/master/images/logo.png
 
 # Your favicon picture URL (appears in the browser tab), we recommend the use of a smaller (64px × 64px) Picture
-favicon: https://raw.githubusercontent.com/FromEndWorld/LOFFER/master/images/favicon.png
+favicon: https://raw.githubusercontent.com/mandalbiswadip/mandalbiswadip.github.io/master/images/favicon.png
 
 
 # Menu button
@@ -30,8 +30,8 @@ navigation:
     url: /about
   - name : Archive
     url: /archive
-  - name : Label
-    url: /tags
+  - name : Gallery
+    url: /galleryy
 
 # Per page Posts
 paginate: 8
@@ -40,17 +40,17 @@ paginate: 8
 excerpt_separator: <!-- more -->
 
 # Your social network links, they will appear as an icon in the footer of your website, fill out the optional
-footer-links: 
-  email: fromendworld@outlook.com 
+footer-links:
+  email:
   facebook: #https://www.facebook.com/<>
-  github: FromEndWorld/loffer #https://github.com/<>
+#  github: mandalbiswadip #https://github.com/<>
   instagram: #https://instagram.com/<>
   linkedin: #https://www.linkedin.com/in/<>
   stackoverflow: # http://stackoerflow.com/<>
-  twitter: # https://www.twitter.com/<your_twitter_username> 
+  twitter: # https://www.twitter.com/<your_twitter_username>
 
 # Site footer text
-footer-text : Copyright (c) 2019 from China World
+footer-text : Copyright (c) 2019
 
 #
 # Comment, note that you should not add many different comments area
@@ -59,12 +59,17 @@ footer-text : Copyright (c) 2019 from China World
 # Input Disqus shortname, you can add a comment area
 disqus: loffer #shortname
 
+titles_from_headings:
+  enabled:     true
+  strip_title: true
+  collections: true
+
 # Input Gitalk related settings, you can add a comment area, specific look tutorial
 gitalk:
-  clientID: 
+  clientID:
   clientSecret :
-  repo: 
-  owner: 
+  repo:
+  owner:
 
 # Enter the Google Analytics web tracking code
 google_analytics:
