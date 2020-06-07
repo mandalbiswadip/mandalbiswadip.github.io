@@ -41,9 +41,9 @@ excerpt_separator: <!-- more -->
 
 # Your social network links, they will appear as an icon in the footer of your website, fill out the optional
 footer-links:
-  email:
+  email: mandalbiswadip448@gmail.com
   facebook: #https://www.facebook.com/<>
-#  github: mandalbiswadip #https://github.com/<>
+  github: mandalbiswadip #https://github.com/<>
   instagram: #https://instagram.com/<>
   linkedin: #https://www.linkedin.com/in/<>
   stackoverflow: # http://stackoerflow.com/<>
@@ -57,7 +57,7 @@ footer-text : Copyright (c) 2019
 #
 
 # Input Disqus shortname, you can add a comment area
-disqus: loffer #shortname
+disqus: biswadip #shortname
 
 titles_from_headings:
   enabled:     true
