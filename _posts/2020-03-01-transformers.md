@@ -30,3 +30,6 @@ Self attention does this in a way where learning two long-range dependencies is 
 
 > "Self-attention, sometimes called intra-attention is an attention mechanism relating different positions
 of a single sequence in order to compute a representation of the sequence."
+
+
+Self attention works the same was as the normal attention mechanism except that here query, keys and values are all from the same layer.
