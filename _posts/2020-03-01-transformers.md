@@ -33,3 +33,10 @@ of a single sequence in order to compute a representation of the sequence."
 
 
 Self attention works the same was as the normal attention mechanism except that here query, keys and values are all from the same layer.
+
+
+## Encoder block of Transformer
+
+{:.center}
+![Encoder block](/images/transformer_encoder.png)
+*Fig. 1: Consider the encoder block of the transformer highlighted in blue.*
