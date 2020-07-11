@@ -31,7 +31,7 @@ navigation:
   - name : Archive
     url: /archive
   - name : Gallery
-    url: /galleryy
+    url: /gallery
 
 # Per page Posts
 paginate: 8
@@ -44,7 +44,7 @@ footer-links:
   email: mandalbiswadip448@gmail.com
   facebook: #https://www.facebook.com/<>
   github: mandalbiswadip #https://github.com/<>
-  instagram: #https://instagram.com/<>
+  instagram: mandalbiswadip #https://instagram.com/<>
   linkedin: #https://www.linkedin.com/in/<>
   stackoverflow: # http://stackoerflow.com/<>
   twitter: # https://www.twitter.com/<your_twitter_username>
