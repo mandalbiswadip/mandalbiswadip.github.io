@@ -57,7 +57,7 @@ footer-text : Copyright (c) 2019
 #
 
 # Input Disqus shortname, you can add a comment area
-disqus: biswadip #shortname
+disqus: http-mandalbiswadip-github-io. #shortname
 
 titles_from_headings:
   enabled:     true
