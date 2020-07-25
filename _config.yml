@@ -72,7 +72,7 @@ gitalk:
   owner:
 
 # Enter the Google Analytics web tracking code
-google_analytics:
+google_analytics: true
 
 
 #
