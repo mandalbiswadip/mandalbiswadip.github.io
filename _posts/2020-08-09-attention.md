@@ -24,7 +24,8 @@ We can say that the overall sentiment of the sentence is negative. The most impo
 > \"The acting here is good\"
 
 ![attention draw](/images/attention_draw.png)
-*Fig. 2: Learning to attend features *
+
+*Fig. 2: Learning to attend features*
 
 It\'s clear \'**good**\' is the key part for predicting sentiment here. Now, we can imagine 5 different numbers $\{v_{1},v_{2},v_{3},v_{4},v_{5}\}$ deciding which word gets how much weight or attention. In this case $v_{5}$ should be greater than any of the other.
 Now we can just make these attention weights learnable, but there are some obvious problems with that. First, the weights needs to be dependent on the input and second, we can\'t really have different learnable weights for each position as our sentences will be variable length(and of course we don\'t want our weights to be position dependent). So, we can reasonibly compose the attention wegits as the following:
