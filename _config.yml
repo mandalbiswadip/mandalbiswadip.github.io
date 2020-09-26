@@ -8,7 +8,7 @@
 
 # Description/Signature
 name: Biswadip
-description : Biswadip Blog
+description :
 
 
 #
@@ -28,11 +28,10 @@ navigation:
     url: /
   - name : About
     url: /about
-  - name : Archive
-    url: /archive
   - name : Gallery
     url: /gallery
-
+  - name : Cards
+    url: /notes
 # Per page Posts
 paginate: 8
 
@@ -45,9 +44,9 @@ footer-links:
   facebook: #https://www.facebook.com/<>
   github: mandalbiswadip #https://github.com/<>
   instagram: mandalbiswadip #https://instagram.com/<>
-  linkedin: #https://www.linkedin.com/in/<>
+  linkedin: mandalbiswadip #https://www.linkedin.com/in/<>
   stackoverflow: # http://stackoerflow.com/<>
-  twitter: # https://www.twitter.com/<your_twitter_username>
+  twitter: biswadipmandal2 # https://www.twitter.com/<your_twitter_username>
 
 # Site footer text
 footer-text : Copyright (c) 2019
