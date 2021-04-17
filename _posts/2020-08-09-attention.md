@@ -70,7 +70,7 @@ Where ```a``` is a alignment model which calculates the weight for jth encoder h
 
 **In case of self-attention ```a``` is a function of only the input vectors(the vectors taking the weighted sum).** So, in case of self-attention the ```a``` function would become something like this:
 \begin{equation} 
-e_{ij} = a(h_{j}, h_{j})
+e_{ij} = a(h_{i}, h_{j})
 \end{equation}
 
 I tried to make use of self-attention for a dataset and listed down few key observations about self-attention.
