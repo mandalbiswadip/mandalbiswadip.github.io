@@ -23,17 +23,11 @@ For the same task, let's train a different deep neural network $f2$ (different h
 
 The answer is an emphatic _Yes!_. Emperically[https://arxiv.org/pdf/1312.6199.pdf], it has been found that the set of adverserial examples $R1$ generated above will also be adverserial to the new model f2 trained for the same task T on a different subset of the data D2. 
 
-
-
-D1, P1, F1 ---> R1
-
-D2, P2, F2 ---> R2
-
-
-R1~=R2
-
+But how is this possible? 
 
 ## Are adverserial examples universal?
+
+
 
 Yes. This is bvoz enm
 
