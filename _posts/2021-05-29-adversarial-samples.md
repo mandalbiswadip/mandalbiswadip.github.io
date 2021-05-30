@@ -23,11 +23,11 @@ For the same task, let's train a different deep neural network $f2$ (different h
 
 We now know that adverserial examples are unique given a task. But how is this possible?
 
-Consider a linear classifier $h(x) = sign(w^T.x)$, where $h \in \{ -1,+1 \} $. 
+Consider a linear classifier $h(x) = sign(w^T.x)$, where $h \in \\{ -1 , +1 \\]} $. 
 
 If we add a small perturbation $\eta$  to input $x$ to create a new input $\tilde{x} = x + \eta$ , we expect the classifier to assign the same label to this new input as long as the small perturbation $\eta$ is smaller than the precision(smallest possible change that can be detected in the data) of the inputs. That is we expect
 
-$h(x) = h(\tilde{x} = x + \eta)$ as long as $(\|\eta\|)_{infty} < \epsilon$ where $\epsilon$ is the precision of the inputs.
+$h(x) = h(\tilde{x} = x + \eta)$ as long as $max(\eta)<\epsilon$ where $\epsilon$ is the precision of the input.
 
 ## Are adverserial examples universal?
 
