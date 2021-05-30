@@ -25,27 +25,29 @@ Will the perturted samples generated above (R1) be adverserial to this new model
 
 We now know that adverserial examples are unique, given a task. But how is this possible?
 
-Consider a linear classifier $h(x) = sign(w^T.x)$, where $h$  can either be $+1$ or $-1$.
+Consider a linear classifier $h(x) = w^T.x$, where the prediction will be $sign(h)$. For example,  Ham if $+1$ or spam if $-1$.
 
 If we add a small perturbation $\eta$  to input $x$ to create a new input $\tilde{x} = x + \eta$ , we expect the classifier to assign the same label to this new input as long as the small perturbation $\eta$ is smaller than the precision(smallest possible change that can be detected in the data) of the input. That is, we expect
 
-$h(x) = h(\tilde{x} = x + \eta) = sign(w^T.\tilde{x}) = sign(w^T.x + w^T.\eta)$
+$h(x) = h(\tilde{x} = x + \eta) = w^T.\tilde{x} = w^T.x + w^T.\eta$
 
 as long as $max(\eta)<\epsilon$ where $\epsilon$ is the precision of the input.
 
-Here we see that the value of the perturbation causes the function $h$ to grow by $w^T.\eta$. We can put an upper limit on this change by selecting $\eta = sign(w)* \epsilon$[Ref1]. Assuming that the average magnitude of the weight vector $w$ is m, the growth in the function $h$ can be approximated by $\epsilon mn$ where $n$ is the dimensionality of the input.
+Here we see that the value of the perturbation causes the function $h$ to grow by $w^T.\eta$. We can put an upper limit on this change by selecting $\eta = sign(w)* \epsilon$. Assuming that the average magnitude of the weight vector $w$ is m, the growth in the function $h$ can be approximated by $\epsilon mn$ where $n$ is the dimensionality of the input.
 
 Notice that the change depends on $n$, the dimentionality of the input. So, for tasks where the feature dimension is very large, even an infinitesimal perturbation can cause a very large change in the value of the output funtion $h$. This can result in different label prediction for very similar inputs $x$ and $\tilde{x}$.
 
-From this analysis we see that, if the feature dumension is very high, then we can have adverserial examples for _any type_ of classifier. 
+From this analysis we see that, if the feature dimension is very high, then we can have adverserial examples for _any type_ of classifier. 
 
 
-This is not specific to just deep neural networks. But deep neural networks are more prone to adverserial examples because of the activation functions used in deep neural networks cause the representation manifold to become "step-wise" and non-smooth. 
+This is not specific to _just_ deep neural networks. But deep neural networks are more prone to adverserial examples because the activation functions used in deep neural networks cause the representation manifold to become "step-wise" (since the activate functions are themselves step-wise) and non-smooth (whenever there's a step in the activation function).
 
 
 
 
 <!-- p2pdistance + p2hpdistance -->
 
-
+## Conclusion
+1. Curse of dimensionality strikes again! Adverserial examples are properties of systems with higher dimensions. 
+2. Adverserial examples seen in deep neural networks are mainly due to the activation functions used.
 
