@@ -17,13 +17,14 @@ The perturbations that make the model misclassify an input are often non-random 
 
 ## Are adverserial examples unique for a given dataset and a model?
 
-For a task $T$, let's say we train a deep neural network $f1$ on dataset $D1$ with training procedure $P1$ (the training procedure is nothing but optimization of the network with backpropagation. This can be done using SGD or Adam or other optimizers). Let's say we use this network to generate a set of adverserial examples $R1$. 
+For a task $T$, let's say we train a deep neural network $f1$ on a subset $D1$  of training data $D$ with training procedure $P1$ (the training procedure is nothing but optimization of the network with backpropagation. This can be done using SGD or Adam or other optimizers). Let's say we use this network to generate a set of adverserial examples $R1$. 
 
-For the same task, let's train a different deep neural network $f2$ (different hyperparameters, layers sizes, activations or even the entire architecure) using the training procedure $P2$ (with same or different optimizer) on a different subset of training data $D2$. Will the perturted samples generated above (R1) be adverserial to this new model?
+For the same task, let's train a different deep neural network $f2$ (different hyperparameters, layers sizes, activations or even the entire architecure) using the training procedure $P2$ (with same or different optimizer) on a different subset $D2$ of training data $D$. Will the perturted samples generated above (R1) be adverserial to this new model? The answer is an emphatic _Yes!_. Emperically[https://arxiv.org/pdf/1312.6199.pdf], it has been found that the set of adverserial examples $R1$ generated above will also be adverserial to the new model f2 trained for the same task T on a different subset of the data D2. 
 
-The answer is an emphatic _Yes!_. Emperically[https://arxiv.org/pdf/1312.6199.pdf], it has been found that the set of adverserial examples $R1$ generated above will also be adverserial to the new model f2 trained for the same task T on a different subset of the data D2. 
+We now know that adverserial examples are unique given a task. But how is this possible?
 
-But how is this possible? 
+Consider a linear classifier $h(x) = sign(\dot{w^T}{x})$, where $h \in {-1,+1}$. If we add $\eta$  
+
 
 ## Are adverserial examples universal?
 
