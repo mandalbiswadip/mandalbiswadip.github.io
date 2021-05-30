@@ -25,9 +25,11 @@ We now know that adverserial examples are unique given a task. But how is this p
 
 Consider a linear classifier $h(x) = sign(w^T.x)$, where $h \in \\{ -1 , +1 \\]} $. 
 
-If we add a small perturbation $\eta$  to input $x$ to create a new input $\tilde{x} = x + \eta$ , we expect the classifier to assign the same label to this new input as long as the small perturbation $\eta$ is smaller than the precision(smallest possible change that can be detected in the data) of the inputs. That is we expect
+If we add a small perturbation $\eta$  to input $x$ to create a new input $\tilde{x} = x + \eta$ , we expect the classifier to assign the same label to this new input as long as the small perturbation $\eta$ is smaller than the precision(smallest possible change that can be detected in the data) of the inputs. That is, we expect
 
-$h(x) = h(\tilde{x} = x + \eta)$ as long as $max(\eta)<\epsilon$ where $\epsilon$ is the precision of the input.
+$h(x) = h(\tilde{x} = x + \eta) = sign(w^T.\tilde{x}) = sign(w^T.x + w^T.\eta)$ as long as $max(\eta)<\epsilon$ where $\epsilon$ is the precision of the input.
+
+Here we see that the value of the perturbation cause the function $h$ to grow by $w^T.\eta$. We can put an upper limit on this change by selecting $\eta = \epsilon sign(w)$. Assuming that the average magnitude of the weight vector $w$ is m, the growth in the function $h$ can be approximated by $\delta = \epsilon mn$ where $n$ is the dimensionality of the input.
 
 ## Are adverserial examples universal?
 
