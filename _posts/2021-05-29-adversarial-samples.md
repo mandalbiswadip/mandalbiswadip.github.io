@@ -51,6 +51,6 @@ This is not specific to _just_ deep neural networks. But deep neural networks ar
 1. Curse of dimensionality strikes again! Adverserial examples are properties of systems with higher dimensions. 
 2. Adverserial examples seen in deep neural networks are mainly due to the activation functions used.
 
-This post was developed in collaboration with [Nilesh Chaudhari](@nonlocal).
+This post was developed in collaboration with [Nilesh Chaudhari](https://github.com/nonlocal).
 
 
