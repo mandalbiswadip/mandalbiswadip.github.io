@@ -21,30 +21,31 @@ For a task $T$, let's say we train a deep neural network $f1$ on a subset $D1$  
 
 For the same task, let's train a different deep neural network $f2$ (different hyperparameters, layers sizes, activations or even the entire architecure) using the training procedure $P2$ (with same or different optimizer) on a different subset $D2$ of training data $D$. Will the perturted samples generated above (R1) be adverserial to this new model? The answer is an emphatic _Yes!_. Emperically[https://arxiv.org/pdf/1312.6199.pdf], it has been found that the set of adverserial examples $R1$ generated above will also be adverserial to the new model f2 trained for the same task T on a different subset of the data D2. 
 
-We now know that adverserial examples are unique given a task. But how is this possible?
+## Are adverserial examples universal?
+
+We now know that adverserial examples are unique, given a task. But how is this possible?
 
 Consider a linear classifier $h(x) = sign(w^T.x)$, where $h \in \{ -1 , +1 \} $. 
 
 If we add a small perturbation $\eta$  to input $x$ to create a new input $\tilde{x} = x + \eta$ , we expect the classifier to assign the same label to this new input as long as the small perturbation $\eta$ is smaller than the precision(smallest possible change that can be detected in the data) of the input. That is, we expect
 
-$h(x) = h(\tilde{x} = x + \eta) = sign(w^T.\tilde{x}) = sign(w^T.x + w^T.\eta)$ as long as $max(\eta)<\epsilon$ where $\epsilon$ is the precision of the input.
+$h(x) = h(\tilde{x} = x + \eta) = sign(w^T.\tilde{x}) = sign(w^T.x + w^T.\eta)$
 
-Here we see that the value of the perturbation causes the function $h$ to grow by $w^T.\eta$. We can put an upper limit on this change by selecting $\eta = sign(w)* \epsilon$[Ref1]. Assuming that the average magnitude of the weight vector $w$ is m, the growth in the function $h$ can be approximated by $\Delta = \epsilon mn$ where $n$ is the dimensionality of the input.
+as long as $max(\eta)<\epsilon$ where $\epsilon$ is the precision of the input.
 
-Notice that the change \$Delta$ depends on $n$, the dimentionality of the input. So, for tasks where the feature dimension is very large, an infinitesimal perturbation can cause a very large change in the value of the output funtion $h$. This can result in different label prediction for very similar inputs $x$ and $\tilde{x}$.
+Here we see that the value of the perturbation causes the function $h$ to grow by $w^T.\eta$. We can put an upper limit on this change by selecting $\eta = sign(w)* \epsilon$[Ref1]. Assuming that the average magnitude of the weight vector $w$ is m, the growth in the function $h$ can be approximated by $\epsilon mn$ where $n$ is the dimensionality of the input.
 
+Notice that the change depends on $n$, the dimentionality of the input. So, for tasks where the feature dimension is very large, even an infinitesimal perturbation can cause a very large change in the value of the output funtion $h$. This can result in different label prediction for very similar inputs $x$ and $\tilde{x}$.
 
-
-
-## Are adverserial examples universal?
-
+From this analysis we see that, if the feature dumension is very high, then we can have adverserial examples for _any type_ of classifier. 
 
 
-Yes. This is bvoz enm
+This is not specific to just deep neural networks. But deep neural networks are more prone to adverserial examples because of the activation functions used in deep neural networks cause the representation manifold to become "step-wise" and non-smooth. 
 
-high dim
 
-p2pdistance + p2hpdistance
+
+
+<!-- p2pdistance + p2hpdistance -->
 
 
 
