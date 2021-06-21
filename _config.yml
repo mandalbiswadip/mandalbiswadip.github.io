@@ -7,7 +7,7 @@
 # Behind the pound sign text is documentation, it will not be read by the program.
 
 # Description/Signature
-name: Biswadip
+name: Biswadip Mandal
 description :
 
 
@@ -47,6 +47,7 @@ footer-links:
   linkedin: mandalbiswadip #https://www.linkedin.com/in/<>
   stackoverflow: # http://stackoerflow.com/<>
   twitter: biswadipmandal2 # https://www.twitter.com/<your_twitter_username>
+
 
 # Site footer text
 footer-text : Copyright (c) 2019
