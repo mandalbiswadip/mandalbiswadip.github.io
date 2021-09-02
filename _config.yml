@@ -28,8 +28,8 @@ navigation:
     url: /
   - name : About
     url: /about
-  - name : Gallery
-    url: /gallery
+  - name : Music
+    url: /music
   - name : Cards
     url: /notes
 # Per page Posts
