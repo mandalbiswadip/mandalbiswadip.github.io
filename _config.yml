@@ -30,8 +30,6 @@ navigation:
     url: /about
   - name : Music
     url: /music
-  - name : Cards
-    url: /notes
 # Per page Posts
 paginate: 8
 

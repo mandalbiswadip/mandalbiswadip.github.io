@@ -1,1 +1,0 @@
-I will be putting short and quick notes here
