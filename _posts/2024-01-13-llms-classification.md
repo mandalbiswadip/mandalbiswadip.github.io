@@ -22,6 +22,9 @@ Few-shot learning techniques extend the capabilities of pretrained language mode
 Regular fine tuning with bert
 Unifying Question Answering, Text Classification, and Regression via Span Extraction
 
+![bert](/images/bert_cls.png)
+*Fig. 1: BERT for classification*
+
 
 There are three types of Pre-trained Language Models available:
 Encoder only models such as BERT and their derivatives such as RoBERTA which takes a piece as input and outputs a vector for each token in the input. Typically an additional token (CLS token) is attached at the beginning of the text whose output vector is used to classify the input text. These models are pre-trained with one token level(Masked Language Modelling) and one sentence level(Next sentence prediction) task.
