@@ -15,74 +15,87 @@ Before the era of large-scale pretrained language models, training deep learning
 
 ## Pretrained Language Models:
 The landscape of text classification changed significantly with the introduction of pretrained language models. Models like ELMO (Embeddings from Language Models), Universal Sentence Encoders, and BERT (Bidirectional Encoder Representations from Transformers) demonstrated the power of leveraging large-scale pretraining on massive text corpora. These models learn rich contextual representations of words and sentences, allowing them to capture intricate linguistic nuances.
-Few-shot learning techniques extend the capabilities of pretrained language models by enabling them to perform well on tasks with minimal examples. This is particularly useful in scenarios where acquiring large labeled datasets is challenging. 
+Few-shot learning techniques extend the capabilities of pretrained language models by enabling them to perform well on tasks with minimal examples. This is particularly useful in scenarios where acquiring large labeled datasets is challenging.
 
 
-Describe three type of models
-Encoder only
+### Fine Tuning:
+Regular fine tuning with bert
+Unifying Question Answering, Text Classification, and Regression via Span Extraction
 
-Autoregressive Decoder only models 
+
+There are three types of Pre-trained Language Models available:
+Encoder only models such as BERT and their derivatives such as RoBERTA which takes a piece as input and outputs a vector for each token in the input. Typically an additional token (CLS token) is attached at the beginning of the text whose output vector is used to classify the input text. These models are pre-trained with one token level(Masked Language Modelling) and one sentence level(Next sentence prediction) task.
+
+Autoregressive Decoder only models:  These can do in-context learning
 
 Encoder-Decoder Models
+### Prompt Tuning?
+Talk about prompt tuning and T5 --> formulate templates with [MASK] and predict the masked tokens. mention PTR paper
+These can do in-context learning as well.
+
+### In-Context Learning
 
 
+Prompting(without tuning)
 Methods like prompt-based few-shot learning allow users to provide a few examples of the task they want the model to perform, and the pretrained model adapts to the specific task with remarkable accuracy.
+Acknoledge that the prompting field is really new and you can just find a method intuitive and try for your usecase and it may end up working great.
 
 
+Explain Chain of thoughts and other prompting strategies 
+point out that no-fine tuning can benefit from no catastrophic forgetting
 
-Basically from fine-tuning LMs to prompting LLMs. However, does zero/few shot prompting always work? 
-What if you have thousands of classes? 
-PTR: Prompt Tuning with Rules for Text Classification
+Describe few works for zero shot and few shot learning. Give examples of some prompts
+
+
+Now this works great for a classiciation task where you have only a few classes. What if you have thousands of classes. Your prompt can't really fit so many examples.
+
+PTR: Prompt Tuning with Rules for Text Classification:  we propose prompt tuning with rules (PTR) for many-class text classification and apply logic rules to construct prompts with several sub-prompts
 
 What if the number of patterns you have are way more than you can fit in a prompt?
 To add more: you can have scenarios where you need additional explanations for each class: CoT prompts for each class.
 
-If you have labelled data: is the old way of training a classifier is a good idea? 
-
-
-
-Fine tuning --> Cloze questions(without or few examples) --> 
-
-### is data augmentation needed in classification? Since data augmentation often comes from a model and we probably use the same model for inference.
+### Using Class description rather than training examples
+Semantic matching for text classification with complex class descriptions
+Knowledgeable Prompt-tuning: Incorporating Knowledge into Prompt Verbalizer for Text Classification
+Get class descriptions from a knowledge base using retrieval first?
 
 ### formulating questions related to task descriptions 
-PET: It’s Not Just Size That Matters: Small Language Models Are Also Few-Shot Learners
+PET: pattern-exploiting training: This introduces the idea of class description. In few-shots learning, the choosen examples can only give a limited idea about the classification task. The task can be made more clear if we just use a class description. 
+How does task description relate to cloze questions? --> append the task description and let the model predict / complete the blank
+Exmaple: The movie is like any other movie this year. What's wrong with the entertainment industry lately.
+
+Append. `The movie sentiment is` and let the model complete the sentence
+
+This makes sense for a zero-shot scenario. The PET paper extends this approach for a few shot setting. The few shots approach doesn't sound very promising
 
 
-### Strategies to select examples for few shot learnings for prompting
+-->
+It’s Not Just Size That Matters: Small Language Models Are Also Few-Shot Learners : successor of PET for multiple token output -- not good enough problem to be included in the blog
 
+Prompt Automation? LM-BFF: Making Pre-trained Language Models Better Few-shot Learners
+Building sub-prompts -- this is also low priority. Too much specific content for prompt formulation
 
-### Using Class description rather than training examples
+### Instead of cloze questions, can question answering solve this problem
+
+# Strategies to select examples for few shot learnings for prompting
+Use KNN like algorithm to dynamically select examples and keep the input short: https://medium.com/@iryna230520/dynamic-few-shot-prompting-overcoming-context-limit-for-chatgpt-text-classification-2f70c3bd86f9 
+
+If you have labelled data: is the old way of training a classifier is a good idea? 
+Fine tuning --> Cloze questions(without or few examples) -->
 
 
 ### Is fine-tuning still better than prompt selection?
 
 
-### What to do when number of classes are huge?
+Softmax vs generation:
 
-### In context learning can be hindered by the limied number of tokens allowed 
+softmax - operates on cross entropy: gives distribution over number of classes
 
-Use KNN like algorithm to dynamically select examples and keep the input short: https://medium.com/@iryna230520/dynamic-few-shot-prompting-overcoming-context-limit-for-chatgpt-text-classification-2f70c3bd86f9 
-
-Prompt Tuning?
-Prompt Automation? LM-BFF: Making Pre-trained Language Models Better Few-shot Learners
-
-
+generation: operates on cross entropy. gives distribution over the vocabulary(so is the case in masking and cloze question). The token can have meaning attached to it.
 
 
 papers:
 
-Language models are unsupervised multitask learners. Techni- cal report: cloze questions 
-
-PET: pattern-exploiting training -- works when the class answer predicted by LM corresponds to a single  token in the vocab
-
-It’s Not Just Size That Matters: Small Language Models Are Also Few-Shot Learners
-
-LM-BFF: Making Pre-trained Language Models Better Few-shot Learners
-
-Semantic matching for text classification with complex class descriptions
-Knowledgeable Prompt-tuning: Incorporating Knowledge into Prompt Verbalizer for Text Classification
-
-
+Language models are unsupervised multitask learners. Technical report: cloze questions 
 
 Text Classification via Large Language Models
