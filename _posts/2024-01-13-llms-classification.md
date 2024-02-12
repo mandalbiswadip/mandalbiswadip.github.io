@@ -36,13 +36,26 @@ Encoder-Decoder Models
 Talk about prompt tuning and T5 --> formulate templates with [MASK] and predict the masked tokens. mention PTR paper
 These can do in-context learning as well.
 
-### In-Context Learning
 
+https://aclanthology.org/2021.emnlp-main.243.pdf -- the prompt tuning section has important stuff.
+
+Quoting from the paper:
+
+```
+Following the “text-to-text” approach of T5 (Raffel et al., 2020), we cast all tasks as text generation. Instead of modeling classification as the probabil- ity of an output class given some input, Pr(y|X), where X is a series of tokens and y is a single class label, we now model it as conditional generation, where Y is a sequence of tokens that represent a class label. T5 models classification as Prθ (Y |X ), parameterized by the weights, θ, of the transform- ers (Vaswani et al., 2017) that make up its encoder and decoder.
+```
+
+https://www.union.ai/blog-post/fine-tuning-vs-prompt-tuning-large-language-models#:~:text=One%20technique%20that%20straddles%20the,%2Dprovided%20“hard%20prompts”.
+
+
+### In-Context Learning
 
 Prompting(without tuning)
 Methods like prompt-based few-shot learning allow users to provide a few examples of the task they want the model to perform, and the pretrained model adapts to the specific task with remarkable accuracy.
 Acknoledge that the prompting field is really new and you can just find a method intuitive and try for your usecase and it may end up working great.
 
+![zeroshot](/images/zero_shot_prompt.png)
+*Fig. 1: Zero Shot Prompting*
 
 Explain Chain of thoughts and other prompting strategies 
 point out that no-fine tuning can benefit from no catastrophic forgetting
@@ -88,6 +101,8 @@ Fine tuning --> Cloze questions(without or few examples) -->
 
 
 ### Is fine-tuning still better than prompt selection?
+a middle road like prompt tuning might be benefifical since it can make use of the knowledge base of LLMs and might not need to be fully fine-tuned.
+
 
 
 Softmax vs generation:
